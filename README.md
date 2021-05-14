@@ -2,13 +2,11 @@ This is a addon to [Hurricane VR 1.97.1](https://assetstore.unity.com/packages/t
 
 When you snap rotate and teleport, your hands and the items in them are falling behind. I don't like this so wrote some code that freezes your hands so they can follow you as you move.
 
-Before:
-https://www.youtube.com/watch?v=SX333_ONn68
+Before: https://www.youtube.com/watch?v=SX333_ONn68
 
-After:
-https://www.youtube.com/watch?v=XubQFUjpZ-I
+After: https://www.youtube.com/watch?v=XubQFUjpZ-I
 
-How to use:
+## How Yo Use
 1. Add HandHelper.cs to `Assets\HurricaneVR\Framework\Scripts`
 2. Replace HandleSnapRotation() in `HurricaneVR\Framework\Scripts\Core\Player\HVRPlayerController.cs` with
 ```cs
@@ -92,3 +90,6 @@ private IEnumerator Teleport()
     /* addon end */
 }
 ```
+
+## Keep In Mind
+Keep in mind that snapping the hands like this can get them stuck inside other colliders since we are removing physics from the equation. You could use some kind of rigidbody sweep test when moving to fix this, but that is up to you to implement if you want.
